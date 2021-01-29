@@ -3,4 +3,4 @@ Language competition study using the mean-filed approximation of the Abrams-Stro
 
 The model is started considering a scenario where the two languages have the same prestige s=0.5 and the same number of speakers. The two languages are uniformly distributed.
 
-After the iterative process, one can see the formation of large clusters or islands where individuals speak a specific language.
+After the iterative process, one can see the formation of large clusters or islands where individuals speak a specific language. The uploaded video represents the time evolution of the two languages and exhibits the formation of these islands. 
