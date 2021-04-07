@@ -184,8 +184,8 @@ for iterr in np.arange(maxit):
     if (iterr%mult) == 0:
         ph = int(iterr / mult)
         numsp[ph] = np.array([numa, numb])
-        figr = repres(popu)
-        figr.savefig('lang_comp_{}.png'.format(str(ph)),bbox_inches='tight')
+        #figr = repres(popu)
+        #figr.savefig('lang_comp_{}.png'.format(str(ph)),bbox_inches='tight')
     else:
         None
     # Exit process. We can stop if one of the languages dies
@@ -196,28 +196,31 @@ for iterr in np.arange(maxit):
 
 # Representation 
 #fig , (ax1, ax2, ax3) = plt.subplots(1, 3)
-#fig.suptitle('')
+#fig.suptitle('Language competition')
 if __name__ == "__main__":
-    #figr = rep(popu)    
+    #figr = repres(popu)    
     #dummy = plt.figure()
     #new_manager = dummy.canvas.manager
     #new_manager.canvas.figure = figr
     #figr.set_canvas(new_manager.canvas)
     #plt.show(figr)
 # Representation of the lattice final state 
-    figr=rep(popu)
-    dummy = plt.figure()
-    new_manager = dummy.canvas.manager
-    new_manager.canvas.figure = figr
-    figr.set_canvas(new_manager.canvas)
-    plt.show()
+    #figr=repres(popu)
+    #dummy = plt.figure()
+    #new_manager = dummy.canvas.manager
+    #new_manager.canvas.figure = figr
+    #figr.set_canvas(new_manager.canvas)
+    #plt.show()
 
-    #fig, ax = plt.subplots()
-    #ax.plot( numsp[:,0] , c='red' , linestyle='solid', marker='o' , 
-    #linewidth=1.5 , markersize=5.5 , label='Lang A')
-    #ax.plot( numsp[:,1] , c='blue', linestyle='solid', marker='x' , 
-    #linewidth=1.5 , markersize=5.5 , label='Lang B')
-    #ax.xaxis.set_major_formatter(lambda val, pos : r'{}'.format(int(val)*mult))
-    #ax.set( xlabel='Iteration' , ylabel='Number speakers' , title='Number of 
-    #speakers as a function of time')
-    #ax.legend(loc='upper left')
+    fig, ax = plt.subplots()
+    ax.plot( numsp[:,0] , c='red' , linestyle='solid', marker='o' , 
+    linewidth=1.5 , markersize=5.5 , label='Lang A')
+    ax.plot( numsp[:,1] , c='blue', linestyle='solid', marker='x' , 
+    linewidth=1.5 , markersize=5.5 , label='Lang B')
+    ax.xaxis.set_major_formatter(lambda val, pos : r'{}'.format(int(val)*mult))
+    ax.set(xlabel = 'Iteration', 
+           ylabel = 'Number speakers', 
+           title = 'Number of speakers as a function of time'
+           )
+    ax.legend(loc='upper left')
+    plt.show()
